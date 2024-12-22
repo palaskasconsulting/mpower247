@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta 
+    name="description" 
+    content="Standalone Membership Plans at M-Power Fitness. Sign up for our Roanoke gym memberships, day passes, or guest passes and start your fitness journey today."
+  />
+  <meta name="keywords" content="Gym, Membership, Fitness, M-Power Fitness"/>
+  <meta name="author" content="M-Power Fitness" />
+  <title>M-Power Fitness | Membership Plans</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ----------------------------------------- 
+       RESET & BASE 
+    ----------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* ----------------------------------------- 
+       VARIABLES 
+    ----------------------------------------- */
+    :root {
+      --primary-color: #ff5722; /* Orange */
+      --dark-bg: #1a1a1a;       /* Black */
+      --light-bg: #f4f4f4;      /* Off-white */
+    }
+
+    /* ----------------------------------------- 
+       NAVBAR 
+    ----------------------------------------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--dark-bg);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .navbar .logo a {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    .navbar .logo a:hover {
+      color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links li a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links li a:hover {
+      color: var(--primary-color);
+    }
+
+    /* ----------------------------------------- 
+       HERO SECTION 
+    ----------------------------------------- */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 50vh; /* Adjust hero height as needed */
+      background: var(--dark-bg) url('./people_in_gym.webp') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay for legibility */
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2; 
+      max-width: 800px;
+      margin: 0 auto;
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero .cta {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .hero .cta:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /* ----------------------------------------- 
+       WAVE DIVIDER
+    ----------------------------------------- */
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: -6px; /* Minimizes gap between sections */
+      margin-top: -40px; /* Minimizes gap between sections */
+    }
+
+    /* ----------------------------------------- 
+       MEMBERSHIP SECTION 
+    ----------------------------------------- */
+    #membership {
+      text-align: center;
+      background: #fff; /* White background for contrast */
+      padding: 3rem 1rem 4rem;
+    }
+    .cta-section {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: #333;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-top: 0.5rem;
+    }
+
+    /* Membership Cards */
+    .membership-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .membership-card {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem;
+    }
+    .membership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .membership-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .membership-card p {
+      margin-bottom: 0.5rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .membership-card ul {
+      margin: 0.5rem 0;
+      padding: 0;
+    }
+    .membership-card ul li {
+      margin: 0.4rem 0;
+    }
+    .membership-card .price {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 1rem 0;
+      font-weight: 700;
+    }
+    .membership-card .cta {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .membership-card .cta:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /* ----------------------------------------- 
+       FOOTER SECTION 
+    ----------------------------------------- */
+    footer {
+      background: var(--dark-bg);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    /* ----------------------------------------- 
+       RESPONSIVE MEDIA QUERIES 
+    ----------------------------------------- */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .membership-options {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+   <nav class="navbar">
+    <div class="logo">
+      <a href="#home">M-Power Fitness</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>|
+      <li><a href="./membership.html">Membership</a></li>|
+      <li><a href="./meal-prep">Meal Prep</a></li>|
+      <li><a href="./massage">Athletic Massage</a></li>|
+      <li><a href="./contact">Contact</a></li>|
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Membership Plans</h1>
+      <p>Ready to take your fitness journey to the next level?</p>
+      <a href="#membership" class="cta">View Plans</a>
+    </div>
+  </section>
+
+
+  <!-- MEMBERSHIP SECTION -->
+  <section id="membership">
+    <div class="cta-section">
+      <h2>Become a Member Today!</h2>
+      <p>
+        Join Roanoke's premier fitness community and unlock access to our 
+        state-of-the-art facilities, expert trainers, and a supportive environment 
+        to help you reach your fitness goals.
+      </p>
+    </div>
+
+    <div class="membership-options">
+      <!-- CARD 1 -->
+      <div class="membership-card">
+        <h3>Yearly Plan Special</h3>
+        <p>Limited Time Offer! 12 Month Commitment</p>
+        <p>24-hour access to both facilities</p>
+        <ul>
+          <li>Free Wifi</li>
+          <li>Sauna / Cold Plunges</li>
+          <li>Shower</li>
+        </ul>
+        <p class="price">$29.99/month</p>
+        <a href="#signup" class="cta">Sign Up</a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="membership-card">
+        <h3>Elite Package</h3>
+        <p>Join Us on a Monthly Basis</p>
+        <p>24-hour access to both facilities</p>
+        <ul>
+          <li>Free Wifi</li>
+          <li>Sauna / Cold Plunge</li>
+          <li>Shower</li>
+        </ul>
+        <p class="price">$45.00/month</p>
+        <a href="#signup" class="cta">Sign Up</a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="membership-card">
+        <h3>Day Pass</h3>
+        <p>Access to gym facilities for 24 hours</p>
+        <p class="price">$15.00</p>
+        <a href="#signup" class="cta">Sign Up</a>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="membership-card">
+        <h3>1 Week Guest Pass</h3>
+        <p>24 Hour Access for 1 Week</p>
+        <p class="price">$30.00</p>
+        <a href="#signup" class="cta">Sign Up</a>
+      </div>
+    </div>
+  </section>
+<section id="testimonials" style="background: #fff; padding: 3rem 1rem;">
+  <style>
+    /* Embedding minimal styling here for convenience */
+
+    #testimonials {
+      text-align: center;
+      color: #333;
+    }
+    #testimonials h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #ff5722; /* brand orange */
+    }
+
+    .testimonial-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      max-width: 350px;
+      padding: 2rem;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .testimonial-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    .member-name {
+      font-weight: bold;
+      color: #333;
+    }
+    .member-location {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .testimonial-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <h2>What Our Members Say</h2>
+  <div class="testimonial-grid">
+    <!-- Testimonial #1 -->
+    <div class="testimonial-card">
+      <p>
+        “M-Power Fitness changed my life! The 24-hour access and the supportive staff make it easy to keep up with my fitness routine.”
+      </p>
+      <p class="member-name">— Alex K.</p>
+      <p class="member-location">Roanoke, VA</p>
+    </div>
+
+    <!-- Testimonial #2 -->
+    <div class="testimonial-card">
+      <p>
+        “The group classes are amazing—especially the yoga sessions. I’ve never felt stronger or more confident. Highly recommend!”
+      </p>
+      <p class="member-name">— Samantha R.</p>
+      <p class="member-location">Salem, VA</p>
+    </div>
+
+    <!-- Testimonial #3 -->
+    <div class="testimonial-card">
+      <p>
+        “I love the meal prep options after a workout. It’s so convenient to grab a healthy meal and save time. Best gym in town!”
+      </p>
+      <p class="member-name">— Daniel M.</p>
+      <p class="member-location">Cave Spring, VA</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <style>
+    .site-footer {
+      background-color: #1a1a1a; /* Dark background */
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem; /* Space between links */
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #ff5722; /* Orange accent on hover */
+    }
+    .site-footer p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+  </style>
+
+  <div class="footer-links">
+    <a href="./index.html">Home</a>
+    <a href="./membership.html">Membership</a>
+    <a href="./meal-prep.html">Meal Prep</a>
+    <a href="./massage.html">Massage</a>
+  </div>
+	<small>
+	<p>Visit us at: 3719 Brambleton Ave, Roanoke, VA 24018 (Cave Spring)</p>
+      <p>Email: contact@mpowerfitness.com</p>
+      <p>Phone: (434) 401-9602</p>
+	</small>
+  <p>&copy; 2024 M-Power Fitness. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

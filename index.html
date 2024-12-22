@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta 
+    name="description" 
+    content="Discover M-Power Fitness, the top 24-hour gym in Roanoke, Virginia. Join us for yoga, strength training, personal training, and more! Your fitness journey starts here." 
+  />
+  <meta 
+    name="keywords" 
+    content="Roanoke gym, fitness center Roanoke VA, personal training Roanoke, yoga classes Roanoke, 24-hour gym Roanoke" 
+  />
+  <meta name="author" content="M-Power Fitness" />
+  <title>M-Power Fitness | Roanoke VA's Top 24-Hour Gym</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* 
+    =============================================
+    =============== RESET & BASE ===============
+    =============================================
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+      overflow-x: hidden; /* Prevent horizontal scroll from angled sections */
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* 
+    =============================================
+    ================= VARIABLES =================
+    =============================================
+    */
+    :root {
+      --primary-color: #ff5722;
+      --dark-bg: #1a1a1a;
+      --light-bg: #f4f4f4;
+    }
+
+    /*
+    =============================================
+    ================ NAVBAR =====================
+    =============================================
+    */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--dark-bg);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* LOGO */
+    .logo a {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    .logo a:hover {
+      color: #fff;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .nav-links li a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+      color: var(--primary-color);
+    }
+
+    /*
+    =============================================
+    =========== HERO / PARALLAX SECTION =========
+    =============================================
+    */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height for a dramatic entrance */
+      background: url("./gym-bg.webp") center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      /* Subtle dark overlay to ensure text is visible */
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2; /* On top of overlay */
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      animation: slideFromTop 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .hero .cta {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .hero .cta:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    @keyframes slideFromTop {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* WAVE DIVIDER (White wave at bottom of Hero) */
+    .wave-divider {
+      margin-top: -10px; /* Slight overlap */
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /*
+    =============================================
+    ================ ABOUT SECTION ==============
+    =============================================
+    */
+    #about {
+      padding: 5rem 1rem;
+      background: #fff;
+      position: relative;
+    }
+    #about h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    /*
+    =============================================
+    ============= CLASSES SECTION ===============
+    =============================================
+    */
+    #classes {
+      padding: 5rem 1rem 3rem;
+      background: var(--light-bg);
+    }
+    #classes h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .class-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .class-list article {
+      width: 300px;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .class-list article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .class-list article h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+    }
+    .class-list article p {
+      font-size: 1rem;
+    }
+
+    /*
+    =============================================
+    ============ ANGLED SECTION CUT =============
+    =============================================
+    */
+    .angled-section {
+      position: relative;
+      background: #000;
+      margin-top: -2px; /* Slight overlap with wave */
+      padding: 5rem 1rem;
+      color: #fff;
+      clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+      /* Adjust the 4vw to change the angle of the top edge */
+    }
+
+    /*
+    =============================================
+    =========== MEAL PREP SECTION ===============
+    =============================================
+    */
+    #meal-prep {
+      text-align: center;
+    }
+    #meal-prep h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .meal-prep-blurb {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .meal-prep-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .meal-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .meal-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .meal-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .meal-item h4 {
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+    }
+    .meal-item p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .meal-prep-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .meal-prep-link:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /*
+    =============================================
+    ============ FEATURES SECTION ===============
+    =============================================
+    */
+    #features {
+      padding: 5rem 1rem 3rem;
+      background: var(--light-bg);
+    }
+    #features h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .features div {
+      width: 250px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .features div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .features div h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    /*
+    =============================================
+    =========== MEMBERSHIP SECTION ==============
+    =============================================
+    */
+    #membership {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    #membership .cta-section {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 3rem 1rem;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      /* angled bottom edge */
+    }
+    #membership .cta-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    #membership .cta-section p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0.5rem auto 0;
+      line-height: 1.8;
+    }
+
+    .membership-options {
+      background-color: #fff;
+      padding: 3rem 1rem 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .membership-card {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem;
+    }
+    .membership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .membership-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+    }
+    .membership-card p {
+      margin-bottom: 0.5rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .membership-card .price {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 1rem 0;
+      font-weight: 700;
+    }
+    .membership-card .cta {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .membership-card .cta:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /*
+    =============================================
+    =============== FOOTER SECTION ==============
+    =============================================
+    */
+    footer {
+      background: var(--dark-bg);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    footer .contact p {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+    }
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    /* SMALLER SCREENS */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      #membership .cta-section h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#home">M-Power Fitness</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>|
+      <li><a href="./membership.html">Membership</a></li>|
+      <li><a href="./meal-prep">Meal Prep</a></li>|
+      <li><a href="./massage">Athletic Massage</a></li>|
+      <li><a href="./contact">Contact</a></li>|
+    </ul>
+  </nav>
+
+  <!-- HERO / PARALLAX SECTION -->
+  <header id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to M-Power Fitness in Roanoke, VA</h1>
+      <p>Your 24/7 destination for fitness, health, and community.</p>
+      <a href="#classes" class="cta">Explore Classes</a>
+    </div>
+    <!-- Wave Divider Below Hero -->
+    <svg class="wave-divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+      <path
+        fill="#FFFFFF"
+        fill-opacity="1"
+        d="M0,96L120,85.3C240,75,480,53,720,42.7C960,32,1200,32,1320,32L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+      ></path>
+    </svg>
+  </header>
+
+  <main>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2>About M-Power Fitness</h2>
+      <p>
+        M-Power Fitness is Roanoke, Virginia's premier 24-hour gym. We offer state-of-the-art equipment, expert personal training, 
+        and a variety of group fitness classes including yoga, HIIT, and strength training. Whether you're aiming to lose weight, 
+        build muscle, or enhance overall wellness, our community-focused gym is here to support your journey.
+      </p>
+      <br />
+      <p>
+        Located in the heart of Roanoke, we provide flexible memberships, tailored fitness plans, and nutrition coaching 
+        to help you achieve your goals. Join us today and discover the best fitness experience in the area!
+      </p>
+    </section>
+
+    <!-- CLASSES SECTION -->
+    <section id="classes">
+      <h2>Our Classes</h2>
+      <div class="class-list">
+        <article>
+          <h3>Yoga</h3>
+          <p>Find balance and tranquility with our expert-led yoga sessions.</p>
+        </article>
+        <article>
+          <h3>Strength Training</h3>
+          <p>Build strength and confidence with targeted workouts.</p>
+        </article>
+        <article>
+          <h3>HIIT</h3>
+          <p>Boost your fitness with high-intensity interval training.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ANGLED SECTION FOR MEAL PREP -->
+    <section class="angled-section" id="mealprep">
+      <div id="meal-prep">
+        <h2>Roanoke's Only Gym-Restaurant Combo!</h2>
+        <p class="meal-prep-blurb">
+          M-Power Fitness is proud to be the only place in Roanoke where you can crush your workout and grab a delicious, 
+          nutritious meal-to-go! Check out some of our fan-favorite meal prep items below.
+        </p>
+        <div class="meal-prep-items">
+          <div class="meal-item">
+            <img src="./honey-chicken.webp" alt="Honey Chipotle Chicken Tenders" />
+            <h4>Honey Chipotle Chicken Tenders w/ Mac & Cheese</h4>
+            <p>Small: Cal 447 / Protein 41 / Carbs 31 / Fat 17</p>
+            <p>Large: Cal 607 / Protein 49 / Carbs 48 / Fat 24</p>
+            <p>Price: $8.99</p>
+          </div>
+          <div class="meal-item">
+            <img
+              src="https://via.placeholder.com/300x200"
+              alt="Jalapeño Honey Chicken Tacos"
+            />
+            <h4>Jalapeño Honey Chicken Tacos</h4>
+            <p>Small: Calories 675 / Protein 49 / Carbs 51 / Fat 18</p>
+            <p>Price: $8.99</p>
+          </div>
+          <div class="meal-item">
+            <img
+              src="./elbow-noodles-mozz.webp"
+              alt="Elbows w/Meat Sauce & Mozzarella"
+            />
+            <h4>Elbows w/ Meat Sauce & Mozzarella</h4>
+            <p>Calories & Nutrition Info Varies</p>
+            <p>Price: $8.99</p>
+          </div>
+        </div>
+        <a href="/meal-prep" class="meal-prep-link">View Full Meal Prep Menu</a>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+      <h2>Why Choose M-Power Fitness?</h2>
+      <div class="features">
+        <div>
+          <h4>New Equipment</h4>
+          <p>Top-tier machines and free weights for every workout need.</p>
+        </div>
+        <div>
+          <h4>Locker Rooms</h4>
+          <p>Spacious and secure lockers for your convenience.</p>
+        </div>
+        <div>
+          <h4>Showers & Sauna</h4>
+          <p>Relax and refresh after your workout with our clean facilities.</p>
+        </div>
+        <div>
+          <h4>Coffee & Meal Prep</h4>
+          <p>Fuel your fitness journey with on-site refreshments and meal options.</p>
+        </div>
+        <div>
+          <h4>Energy Drinks Supplier</h4>
+          <p>Stay energized with a variety of drink options.</p>
+        </div>
+        <div>
+          <h4>Always Clean</h4>
+          <p>We prioritize cleanliness for a healthy environment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP SECTION -->
+    <section id="membership">
+      <div class="cta-section">
+        <h2>Become a Member Today!</h2>
+        <p style="text-align:left;">
+          Join Roanoke's premier fitness community and unlock access to our 
+          state-of-the-art facilities, expert trainers, and a supportive environment 
+          to help you reach your fitness goals.
+        </p>
+      </div>
+      <div class="membership-options">
+        <div class="membership-card">
+          <h3>Yearly Plan Special</h3>
+          <p>Limited Time Offer! 12 Month Commitment</p>
+          <p>24-hour access to both facilities</p>
+          <ul>
+            <li>Free Wifi</li>
+            <li>Sauna / Cold Plunges</li>
+            <li>Shower</li>
+          </ul>
+          <p class="price">$29.99/month</p>
+          <a href="#signup" class="cta">Sign Up</a>
+        </div>
+        <div class="membership-card">
+          <h3>Elite Package</h3>
+          <p>Join Us on a Monthly Basis</p>
+          <p>24-hour access to both facilities</p>
+          <ul>
+            <li>Free Wifi</li>
+            <li>Sauna / Cold Plunge</li>
+            <li>Shower</li>
+          </ul>
+          <p class="price">$45.00/month</p>
+          <a href="#signup" class="cta">Sign Up</a>
+        </div>
+        <div class="membership-card">
+          <h3>Day Pass</h3>
+          <p>Access to gym facilities for 24 hours</p>
+          <p class="price">$15.00</p>
+          <a href="#signup" class="cta">Sign Up</a>
+        </div>
+        <div class="membership-card">
+          <h3>1 Week Guest Pass</h3>
+          <p>24 Hour Access for 1 Week</p>
+          <p class="price">$30.00</p>
+          <a href="#signup" class="cta">Sign Up</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<footer class="site-footer">
+  <style>
+    .site-footer {
+      background-color: #1a1a1a; /* Dark background */
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem; /* Space between links */
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: #ff5722; /* Orange accent on hover */
+    }
+    .site-footer p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+  </style>
+
+  <div class="footer-links">
+    <a href="./index.html">Home</a>
+    <a href="./membership.html">Membership</a>
+    <a href="./meal-prep.html">Meal Prep</a>
+    <a href="./massage.html">Massage</a>
+  </div>
+	<small>
+	<p>Visit us at: 3719 Brambleton Ave, Roanoke, VA 24018 (Cave Spring)</p>
+      <p>Email: contact@mpowerfitness.com</p>
+      <p>Phone: (434) 401-9602</p>
+	</small>
+  <p>&copy; 2024 M-Power Fitness. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
+
+

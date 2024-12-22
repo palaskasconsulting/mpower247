@@ -1,0 +1,773 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 1rem 2rem;
+}
+
+.navbar .logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://source.unsplash.com/random/1920x1080?gym') no-repeat center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ff5722;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+/* Sections */
+section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Typography */
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+    }
+
+    .navbar .logo a {
+      color: #ff5722;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #ff5722;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./gym-bg.webp") no-repeat center/cover;
+
+	color: #fff;
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #ff5722;
+      color: #fff;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background: #e64a19;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    section#about p {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .class-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .class-list article {
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      width: 300px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .class-list article:hover {
+      transform: scale(1.05);
+    }
+
+    .class-list article h3 {
+      color: #ff5722;
+      margin-bottom: 0.5rem;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .features div {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .features div h4 {
+      color: #ff5722;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    footer .contact p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+#meal-prep {
+      background-color: black;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    #meal-prep h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .meal-prep-blurb {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: white;
+    }
+    .meal-prep-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .meal-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .meal-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .meal-item h4 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    .meal-item p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .meal-prep-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: #ff5722;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .meal-prep-link:hover {
+      background: #e64a19;
+    }
+/* 
+    =============================================
+    =============== RESET & BASE ===============
+    =============================================
+    */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+      overflow-x: hidden; /* Prevent horizontal scroll from angled sections */
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* 
+    =============================================
+    ================= VARIABLES =================
+    =============================================
+    */
+    :root {
+      --primary-color: #ff5722;
+      --dark-bg: #1a1a1a;
+      --light-bg: #f4f4f4;
+    }
+
+    /*
+    =============================================
+    ================ NAVBAR =====================
+    =============================================
+    */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--dark-bg);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* LOGO */
+    .logo a {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    .logo a:hover {
+      color: #fff;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .nav-links li a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+      color: var(--primary-color);
+    }
+
+    /*
+    =============================================
+    =========== HERO / PARALLAX SECTION =========
+    =============================================
+    */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height for a dramatic entrance */
+      background: url("./gym-bg.webp") center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      /* Subtle dark overlay to ensure text is visible */
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2; /* On top of overlay */
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      animation: slideFromTop 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .hero .cta {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .hero .cta:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    @keyframes slideFromTop {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* WAVE DIVIDER (White wave at bottom of Hero) */
+    .wave-divider {
+      margin-top: -10px; /* Slight overlap */
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /*
+    =============================================
+    ================ ABOUT SECTION ==============
+    =============================================
+    */
+    #about {
+      padding: 5rem 1rem;
+      background: #fff;
+      position: relative;
+    }
+    #about h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    /*
+    =============================================
+    ============= CLASSES SECTION ===============
+    =============================================
+    */
+    #classes {
+      padding: 5rem 1rem 3rem;
+      background: var(--light-bg);
+    }
+    #classes h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .class-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .class-list article {
+      width: 300px;
+      padding: 1.5rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .class-list article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .class-list article h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+    }
+    .class-list article p {
+      font-size: 1rem;
+    }
+
+    /*
+    =============================================
+    ============ ANGLED SECTION CUT =============
+    =============================================
+    */
+    .angled-section {
+      position: relative;
+      background: #000;
+      margin-top: -2px; /* Slight overlap with wave */
+      padding: 5rem 1rem;
+      color: #fff;
+      clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+      /* Adjust the 4vw to change the angle of the top edge */
+    }
+
+    /*
+    =============================================
+    =========== MEAL PREP SECTION ===============
+    =============================================
+    */
+    #meal-prep {
+      text-align: center;
+    }
+    #meal-prep h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .meal-prep-blurb {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .meal-prep-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .meal-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .meal-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .meal-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .meal-item h4 {
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+    }
+    .meal-item p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+    .meal-prep-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .meal-prep-link:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /*
+    =============================================
+    ============ FEATURES SECTION ===============
+    =============================================
+    */
+    #features {
+      padding: 5rem 1rem 3rem;
+      background: var(--light-bg);
+    }
+    #features h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .features div {
+      width: 250px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .features div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .features div h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    /*
+    =============================================
+    =========== MEMBERSHIP SECTION ==============
+    =============================================
+    */
+    #membership {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    #membership .cta-section {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 3rem 1rem;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      /* angled bottom edge */
+    }
+    #membership .cta-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    #membership .cta-section p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0.5rem auto 0;
+      line-height: 1.8;
+    }
+
+    .membership-options {
+      background-color: #fff;
+      padding: 3rem 1rem 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .membership-card {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1.5rem;
+    }
+    .membership-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .membership-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+    }
+    .membership-card p {
+      margin-bottom: 0.5rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .membership-card .price {
+      font-size: 1.5rem;
+      color: #333;
+      margin: 1rem 0;
+      font-weight: 700;
+    }
+    .membership-card .cta {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .membership-card .cta:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /*
+    =============================================
+    =============== FOOTER SECTION ==============
+    =============================================
+    */
+    footer {
+      background: var(--dark-bg);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    footer .contact p {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+    }
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    /* SMALLER SCREENS */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      #membership .cta-section h2 {
+        font-size: 1.8rem;
+      }
+    }

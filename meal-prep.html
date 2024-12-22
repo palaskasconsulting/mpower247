@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="M-Power Fitness Meal Prep. Order online for pickup or delivery. Explore delicious mains and breakfast options to fuel your fitness journey."
+  />
+  <meta name="keywords" content="Meal Prep, Fitness, Gym, M-Power Fitness" />
+  <meta name="author" content="M-Power Fitness" />
+  <title>M-Power Fitness | Meal Prep Menu</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* -----------------------------------------
+       RESET & BASE
+    ----------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --primary-color: #ff5722;  /* Orange */
+      --dark-bg: #1a1a1a;        /* Black */
+      --light-bg: #f4f4f4;       /* Off-white */
+    }
+
+    /* -----------------------------------------
+       NAVBAR
+    ----------------------------------------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--dark-bg);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .navbar .logo a {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+    .navbar .logo a:hover {
+      color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links li a {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links li a:hover {
+      color: var(--primary-color);
+    }
+
+    /* -----------------------------------------
+       HERO SECTION
+    ----------------------------------------- */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 50vh;
+      background: var(--dark-bg) 
+        url('https://via.placeholder.com/1400x600?text=Meal+Prep+Hero+BG') 
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; 
+      right: 0; 
+      bottom: 0; 
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2; 
+      max-width: 800px;
+      margin: 0 auto;
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero .cta {
+      display: inline-block;
+      padding: 0.9rem 1.8rem;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .hero .cta:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /* -----------------------------------------
+       ORDER INFO SECTION
+    ----------------------------------------- */
+    .order-info {
+      background: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .order-info h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .order-info p {
+      font-size: 1rem;
+      color: #666;
+    }
+    .highlight {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* -----------------------------------------
+       MENU SECTIONS
+    ----------------------------------------- */
+    .menu-category {
+      background: #fff;
+      padding: 2.5rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .menu-category h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .meal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .meal-card {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .meal-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .meal-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .meal-content {
+      padding: 1rem;
+      text-align: left;
+    }
+    .meal-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .meal-desc {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .meal-price {
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .order-btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+    }
+    .order-btn:hover {
+      background: #e64a19;
+      transform: translateY(-3px);
+    }
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+    .site-footer {
+      background-color: var(--dark-bg);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+    .site-footer p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    /* -----------------------------------------
+       MEDIA QUERIES
+    ----------------------------------------- */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .order-info h2 {
+        font-size: 1.6rem;
+      }
+      .menu-category h2 {
+        font-size: 1.6rem;
+      }
+      .meal-card img {
+        height: 140px; /* Smaller image for mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+   <nav class="navbar">
+    <div class="logo">
+      <a href="#home">M-Power Fitness</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>|
+      <li><a href="./membership.html">Membership</a></li>|
+      <li><a href="./meal-prep">Meal Prep</a></li>|
+      <li><a href="./massage">Athletic Massage</a></li>|
+      <li><a href="./contact">Contact</a></li>|
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Meal Prep Menu</h1>
+      <p>Delicious, Nutritious, and Ready to Fuel Your Fitness Journey</p>
+      <a href="#order-info" class="cta">Order Online</a>
+    </div>
+  </section>
+
+  <!-- ORDER INFO SECTION -->
+  <section id="order-info" class="order-info">
+    <h2>Online Ordering</h2>
+    <p>
+      You can order online! Browse our menu items and choose what you’d like to order from us.
+      <br />
+      <span class="highlight">Min. order - $8.00</span>
+      <br /><br />
+      Pickup time: <strong>Dec 24, 10:00 AM - 11:00 AM</strong>
+      <br />
+      Pickup Address: <strong>3719 Brambleton Avenue, Cave Spring, VA 24018-3638</strong>
+      <br />
+      We also offer <strong>Delivery</strong> if you prefer!
+    </p>
+  </section>
+
+  <!-- MAINS MENU SECTION -->
+  <section class="menu-category">
+    <h2>Mains</h2>
+    <div class="meal-grid">
+      <!-- Chicken Shawarma Bowl -->
+      <div class="meal-card">
+        <img 
+          src="https://via.placeholder.com/600x400?text=Chicken+Shawarma" 
+          alt="Chicken Shawarma Bowl" 
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Chicken Shawarma Bowl</h3>
+          <p class="meal-desc">
+            Chicken Shawarma over jasmine rice and tomatoes sprinkled with feta cheese 
+            and a side of pita chips.
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Korean Beef w/ Rice & Broccoli -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Korean+Beef"
+          alt="Korean Beef w/ Rice & Broccoli"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Korean Beef w/ Rice & Broccoli</h3>
+          <p class="meal-desc">
+            Lean ground beef in sweet umami Korean BBQ sauce over jasmine rice with 
+            steamed broccoli. <br />
+            Small: Cal 536 | Protein 35 | Carbs 57 | Fat 19 <br />
+            Large: Cal 855 | Protein 49 | Carbs 95 | Fat 25
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Chicken Fajitas w/ Lime Rice -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Chicken+Fajitas"
+          alt="Chicken Fajitas w/ Lime Rice"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Chicken Fajitas w/ Lime Rice</h3>
+          <p class="meal-desc">
+            Traditionally seasoned Chicken fajitas over grilled onions and peppers 
+            on top of fluffy Chile-Lime rice. <br />
+            Small: Cal 447 | Protein 41 | Carbs 31 | Fat 17 <br />
+            Large: Cal 607 | Protein 49 | Carbs 48 | Fat 24
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Chicken Alfredo -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Chicken+Alfredo"
+          alt="Chicken Alfredo"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Chicken Alfredo</h3>
+          <p class="meal-desc">
+            Blackened Chicken layered over creamy alfredo sauce seasoned 
+            with basil and oregano. <br />
+            Small: Cal 539 | P 47 | C 47 | F 20 <br />
+            Large: Cal 789 | P 65 | C 75 | F 28
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Honey Chipotle Chicken Tenders w/ Mac&Cheese -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Honey+Chipotle+Tenders"
+          alt="Honey Chipotle Chicken Tenders"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Honey Chipotle Chicken Tenders w/ Mac & Cheese</h3>
+          <p class="meal-desc">
+            Chicken Tenders drizzled with sweet honey on a bed of spicy 
+            chipotle Mac & Cheese. <br />
+            Small: Cal 579 | P 43 | C 48 | F 20 <br />
+            Large: Cal 834 | P 65 | C 75 | F 33
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Jerk Chicken Wings w/ Red Beans & Rice -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Jerk+Chicken+Wings"
+          alt="Jerk Chicken Wings w/ Red Beans & Rice"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Jerk Chicken Wings w/ Red Beans & Rice</h3>
+          <p class="meal-desc">
+            Traditional Jerk-rubbed wings with a side of Caribbean-style 
+            Red Beans & Rice. <br />
+            Medium: Cal 754 | P 42 | C 75 | F 29
+          </p>
+          <p class="meal-price">$11.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Mango Chipotle Chicken Wings w/ Mango rice -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Mango+Chipotle+Wings"
+          alt="Mango Chipotle Chicken Wings w/ Mango Rice"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Mango Chipotle Chicken Wings w/ Mango Rice</h3>
+          <p class="meal-desc">
+            Marinated in a sweet & spicy mango chipotle sauce, served with 
+            a side of mango rice. <br />
+            Medium: Cal 725 | P 38 | C 72 | F 26
+          </p>
+          <p class="meal-price">$11.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Lasagna -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Lasagna"
+          alt="Lasagna"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Lasagna</h3>
+          <p class="meal-desc">
+            Classic 3-layer lasagna with rich meat sauce and cheese.<br />
+            Small: 491 Cal | P 28 | C 69 | F 11
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Curry Chicken w/Seasoned Jasmine Rice -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Curry+Chicken"
+          alt="Curry Chicken w/Seasoned Jasmine Rice"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Curry Chicken w/ Seasoned Jasmine Rice</h3>
+          <p class="meal-desc">
+            A bed of seasoned rice topped with savory curry chicken. <br />
+            Small: 629 Cal | P 34 | C 65 | F 24
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Jalapeño Honey Chicken Tacos -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Jalape%C3%B1o+Honey+Tacos"
+          alt="Jalapeño Honey Chicken Tacos"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Jalapeño Honey Chicken Tacos</h3>
+          <p class="meal-desc">
+            Marinated chicken folded with roasted peppers, onions, jalapeños, 
+            and low-fat cheese. <br />
+            Small: 675 Cal | P 49 | C 51 | F 18
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Bourbon Salmon w/Rice & Glazed Carrots -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Bourbon+Salmon"
+          alt="Bourbon Salmon w/ Rice & Glazed Carrots"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Bourbon Salmon w/ Rice & Glazed Carrots</h3>
+          <p class="meal-desc">
+            Salmon cooked in a bourbon sauce over rice, served with sweet glazed carrots. <br />
+            Small: 593 Cal | P 36 | C 44 | F 29
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Beef & Broccoli -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Beef+%26+Broccoli"
+          alt="Beef & Broccoli"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Beef & Broccoli</h3>
+          <p class="meal-desc">
+            Mongolian-style beef strips with fresh broccoli. <br />
+            Small: 613 Cal | P 37 | C 81 | F 18
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Garlic Steak Tips w/Rice & Sweet Potatoes -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Garlic+Steak+Tips"
+          alt="Garlic Steak Tips w/ Rice & Sweet Potatoes"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Garlic Steak Tips w/ Rice & Sweet Potatoes</h3>
+          <p class="meal-desc">
+            Steak tips marinated in a garlic sauce, seared with sweet potatoes and rice. <br />
+            Small: 513 Cal | P 41 | C 29 | F 20
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Elbows w/Meat Sauce & Mozzarella -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Elbows+with+Meat+Sauce"
+          alt="Elbows w/ Meat Sauce & Mozzarella"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Elbows w/ Meat Sauce & Mozzarella</h3>
+          <p class="meal-desc">
+            Elbow noodles with a light meat sauce & fresh mozzarella slices on top.
+          </p>
+          <p class="meal-price">$8.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREAKFAST MENU SECTION -->
+  <section class="menu-category">
+    <h2>Breakfast</h2>
+    <div class="meal-grid">
+      <!-- Breakfast Tacos -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Breakfast+Tacos"
+          alt="Breakfast Tacos"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Breakfast Tacos</h3>
+          <p class="meal-desc">
+            Scrambled eggs with your choice of beef or chicken topped with peppers, onions, 
+            and jalapeños. <br />
+            Small: 530 Cal | P 40 | C 28 | F 27
+          </p>
+          <p class="meal-price">$7.99</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Breakfast Hash -->
+      <div class="meal-card">
+        <img
+          src="https://via.placeholder.com/600x400?text=Breakfast+Hash"
+          alt="Breakfast Hash"
+        />
+        <div class="meal-content">
+          <h3 class="meal-title">Breakfast Hash</h3>
+          <p class="meal-desc">
+            Roasted potatoes, peppers, onions, tomatoes with scrambled eggs, turkey sausage, 
+            and a host of spices. <br />
+            497 Cal | P 36 | C 53 | F 16
+          </p>
+          <p class="meal-price">$7.00</p>
+          <a href="#order-info" class="order-btn">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="./index.html">Home</a>
+      <a href="./membership.html">Membership</a>
+      <a href="./meal-prep.html">Meal Prep</a>
+      <a href="./massage.html">Massage</a>
+    </div>
+    <p>&copy; 2024 M-Power Fitness. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+
